@@ -753,20 +753,23 @@
             }
 
             try {
+                // Create form data
+                const formData = new URLSearchParams();
+                formData.append('product_permalink', PRODUCT_PERMALINK);
+                formData.append('license_key', licenseKey);
+                formData.append('increment_uses_count', 'true');
+
                 // Verify license with Gumroad API
-                const response = await fetch(`https://api.gumroad.com/v2/licenses/verify`, {
+                const response = await fetch(`https://api.gumroad.com/v2/licenses/verify?access_token=${GUMROAD_ACCESS_TOKEN}`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/x-www-form-urlencoded',
                     },
-                    body: new URLSearchParams({
-                        'product_permalink': PRODUCT_PERMALINK,
-                        'license_key': licenseKey,
-                        'access_token': GUMROAD_ACCESS_TOKEN
-                    })
+                    body: formData.toString()
                 });
 
                 const data = await response.json();
+                console.log('Gumroad API response:', data);
 
                 if (data.success && data.purchase) {
                     // License is valid!
