@@ -19,50 +19,7 @@
             min-height: 100vh;
         }
 
-        /* License Key Entry Screen */
-        #license-screen {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-            padding: 20px;
-        }
 
-        .license-container {
-            background: white;
-            padding: 40px;
-            border-radius: 12px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
-            max-width: 500px;
-            width: 100%;
-            text-align: center;
-        }
-
-        .license-container h1 {
-            color: #1e3a8a;
-            margin-bottom: 10px;
-            font-size: 28px;
-        }
-
-        .license-container p {
-            color: #666;
-            margin-bottom: 30px;
-        }
-
-        .license-input {
-            width: 100%;
-            padding: 15px;
-            font-size: 16px;
-            border: 2px solid #ddd;
-            border-radius: 8px;
-            margin-bottom: 15px;
-            font-family: monospace;
-        }
-
-        .license-input:focus {
-            outline: none;
-            border-color: #3b82f6;
-        }
 
         .verify-button {
             width: 100%;
@@ -228,26 +185,7 @@
 </head>
 <body>
     <!-- License Key Entry Screen -->
-    <div id="license-screen">
-        <div class="license-container">
-            <h1>🏈 Get Back in the Game!</h1>
-            <p>Enter your license key to access your playbook</p>
-            
-            <input 
-                type="text" 
-                id="license-key-input" 
-                class="license-input" 
-                placeholder="Enter your license key"
-                autocomplete="off"
-            >
-            
-            <button id="verify-button" class="verify-button">
-                Access Playbook
-            </button>
-            
-            <div id="loading" class="loading">
-                Verifying your license...
-            </div>
+   
             
             <div id="error-message" class="error-message">
                 Invalid license key. Please check and try again.
@@ -709,101 +647,5 @@
         </div>
     </div>
 
-    <script>
-        // Gumroad configuration
-        const GUMROAD_ACCESS_TOKEN = 'S0JlPt_uCjTSbGWV5aEz0tdK8QPkO08v7sbWSH-CbNo';
-        const PRODUCT_PERMALINK = 'vkbqtuj';
-
-        // Check if user already has a verified license
-        window.addEventListener('DOMContentLoaded', () => {
-            const savedLicense = localStorage.getItem('verified_license_key');
-            if (savedLicense) {
-                verifyLicense(savedLicense, true);
-            }
-        });
-
-        // Handle license verification
-        document.getElementById('verify-button').addEventListener('click', async () => {
-            const licenseKey = document.getElementById('license-key-input').value.trim();
-            
-            if (!licenseKey) {
-                showError('Please enter a license key');
-                return;
-            }
-
-            await verifyLicense(licenseKey, false);
-        });
-
-        // Allow Enter key to submit
-        document.getElementById('license-key-input').addEventListener('keypress', (e) => {
-            if (e.key === 'Enter') {
-                document.getElementById('verify-button').click();
-            }
-        });
-
-        async function verifyLicense(licenseKey, silent = false) {
-            const errorDiv = document.getElementById('error-message');
-            const loadingDiv = document.getElementById('loading');
-            const button = document.getElementById('verify-button');
-
-            if (!silent) {
-                errorDiv.style.display = 'none';
-                loadingDiv.style.display = 'block';
-                button.disabled = true;
-            }
-
-            try {
-                // Create form data
-                const formData = new URLSearchParams();
-                formData.append('product_permalink', PRODUCT_PERMALINK);
-                formData.append('license_key', licenseKey);
-                formData.append('increment_uses_count', 'true');
-
-                // Verify license with Gumroad API
-                const response = await fetch(`https://api.gumroad.com/v2/licenses/verify?access_token=${GUMROAD_ACCESS_TOKEN}`, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/x-www-form-urlencoded',
-                    },
-                    body: formData.toString()
-                });
-
-                const data = await response.json();
-                console.log('Gumroad API response:', data);
-
-                if (data.success && data.purchase) {
-                    // License is valid!
-                    localStorage.setItem('verified_license_key', licenseKey);
-                    showContent();
-                } else {
-                    if (!silent) {
-                        showError('Invalid license key. Please check your purchase email and try again.');
-                    }
-                }
-            } catch (error) {
-                console.error('Verification error:', error);
-                if (!silent) {
-                    showError('Unable to verify license. Please check your internet connection and try again.');
-                }
-            } finally {
-                if (!silent) {
-                    loadingDiv.style.display = 'none';
-                    button.disabled = false;
-                }
-            }
-        }
-
-        function showError(message) {
-            const errorDiv = document.getElementById('error-message');
-            errorDiv.textContent = message;
-            errorDiv.style.display = 'block';
-        }
-
-        function showContent() {
-            document.getElementById('license-screen').style.display = 'none';
-            document.getElementById('main-content').style.display = 'block';
-        }
-    </script>
-</body>
-</html>
+   
 
