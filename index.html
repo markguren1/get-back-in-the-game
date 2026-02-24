@@ -3,112 +3,198 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>The Winning Edge Playbook — Now with embedded AI apps for game-changing results</title>
+  <title>Get Back in the Game — The Winning Edge Playbook Bundle</title>
   <style>
-    :root{
-      --bg:#0f172a; --card:#0b1220; --primary:#22c55e; --accent:#38bdf8;
-      --warn:#f59e0b; --text:#e5e7eb; --muted:#9ca3af; --border:#1f2933;
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: #0f172a;
+      background: #ffffff;
+      line-height: 1.6;
     }
-    *{box-sizing:border-box}
-    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
-      background:radial-gradient(1200px 600px at 10% -10%, #0b3a2a 0%, rgba(15,23,42,.6) 40%, var(--bg) 70%);
-      color:var(--text); line-height:1.6}
-    header{position:sticky;top:0;z-index:10;backdrop-filter:blur(10px);
-      background:rgba(15,23,42,.7);border-bottom:1px solid var(--border)}
-    .nav{max-width:1100px;margin:0 auto;padding:14px 16px;display:flex;gap:10px;flex-wrap:wrap;align-items:center}
-    .brand{font-weight:800}
-    .nav a{color:var(--text);text-decoration:none;opacity:.9;padding:8px 10px;border-radius:8px}
-    .nav a.active,.nav a:hover{background:#0b1220}
-    main{max-width:1100px;margin:0 auto;padding:28px 16px 96px}
-    .section{display:none}
-    .section.active{display:block}
-    .hero{display:grid;grid-template-columns:1.2fr .8fr;gap:18px}
-    .card{background:linear-gradient(180deg, rgba(34,197,94,.08), rgba(56,189,248,.05)), var(--card);
-      border:1px solid var(--border);border-radius:16px;padding:22px;box-shadow:0 10px 30px rgba(0,0,0,.25)}
-    .badge{display:inline-block;padding:6px 10px;border-radius:999px;font-size:12px;border:1px solid var(--border);color:var(--muted)}
-    h1{font-size:38px;line-height:1.1;margin:10px 0 8px}
-    h2{font-size:26px;margin:10px 0}
-    h3{font-size:18px;margin:16px 0 8px}
-    p{color:#d1d5db}
-    .bullets{display:grid;gap:8px;margin:12px 0}
-    .bullets li{list-style:none;padding-left:26px;position:relative}
-    .bullets li::before{content:"✓";position:absolute;left:0;top:0;color:var(--primary);font-weight:800}
-    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:10px}
-    .tile{border:1px solid var(--border);border-radius:12px;padding:14px;background:#0b1220}
-    .kicker{color:var(--accent);font-weight:700}
-    footer{position:fixed;bottom:0;left:0;right:0;background:rgba(15,23,42,.85);backdrop-filter:blur(8px);
-      border-top:1px solid var(--border);padding:10px 14px;color:var(--muted);font-size:12px}
-    footer .wrap{max-width:1100px;margin:0 auto;display:flex;gap:10px;flex-wrap:wrap;justify-content:space-between}
-    @media (max-width:860px){.hero{grid-template-columns:1fr}h1{font-size:32px}.grid{grid-template-columns:1fr}}
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 64px 24px;
+    }
+    h1, h2, h3 {
+      line-height: 1.2;
+    }
+    h1 {
+      font-size: 42px;
+      margin-bottom: 12px;
+    }
+    h2 {
+      font-size: 32px;
+      margin-top: 80px;
+      margin-bottom: 16px;
+    }
+    h3 {
+      font-size: 22px;
+      margin-top: 32px;
+    }
+    .tagline {
+      font-size: 20px;
+      max-width: 720px;
+      margin-bottom: 32px;
+    }
+    .callout {
+      background: #f1f5f9;
+      padding: 24px;
+      border-radius: 12px;
+      margin: 24px 0;
+      font-weight: 500;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+      margin-top: 24px;
+    }
+    .card {
+      border: 1px solid #e5e7eb;
+      border-radius: 12px;
+      padding: 20px;
+    }
+    .card strong {
+      display: block;
+      margin-bottom: 8px;
+    }
+    .footer {
+      margin-top: 120px;
+      padding-top: 40px;
+      border-top: 1px solid #e5e7eb;
+      font-size: 14px;
+      color: #475569;
+    }
   </style>
 </head>
 <body>
-<header>
-  <nav class="nav">
-    <div class="brand">Get Back in the Game</div>
-    <a href="#" class="active" data-target="playbook">Playbook</a>
-    <a href="#" data-target="betteryou">BetterYou</a>
-    <a href="#" data-target="betterconnections">BetterConnections</a>
-    <a href="#" data-target="agentclarity">AgentClarity</a>
-    <a href="#" data-target="pricing">Pricing</a>
-    <a href="#" data-target="qa">Q&amp;A</a>
-  </nav>
-</header>
+  <div class="container">
 
-<main>
-  <section id="playbook" class="section active">
-    <div class="hero">
+    <!-- Intro -->
+    <h1>Get Back in the Game</h1>
+    <p class="tagline">
+      The Winning Edge Playbook + 3 Career Prep Apps — a modern career system for a workplace now measured by results, delivered with AI.
+    </p>
+
+    <div class="callout">
+      <p><strong>The old workplace rewarded tasks.</strong><br/>
+      The new workplace rewards results — delivered with AI.</p>
+
+      <p><strong>The old workplace described work with nouns.</strong><br/>
+      The new workplace evaluates verbs — outcomes delivered with AI.</p>
+
+      <p><strong>You are the coach.</strong><br/>
+      AI is the execution engine.</p>
+    </div>
+
+    <div class="callout">
+      <p><strong>Free AI gives answers.</strong><br/>
+      This system gives results.</p>
+      <p>The Playbook gives you the path. The apps give you practice, reps, and behavior change.</p>
+    </div>
+
+    <!-- Playbook -->
+    <h2>The Winning Edge Playbook</h2>
+    <p>
+      Your operating system for competing in an AI-accelerated workplace.
+    </p>
+    <div class="grid">
       <div class="card">
-        <span class="badge">AI Engineered. Human Inspired.</span>
-        <h1>The Winning Edge Playbook</h1>
-        <p class="kicker">Now with embedded AI apps for game-changing results</p>
-        <p>The workplace has changed. AI and robotics are reshaping roles, workflows, and expectations. Whether you were laid off, see the signs coming, or feel the ground shifting under your role, this Playbook is a wake-up call — and a practical path forward.</p>
-        <p>This isn’t just AI advice. It’s a proven career reset approach that helps you compete in the new workplace by upgrading the human side of performance while learning to work productively with AI.</p>
-        <ul class="bullets">
-          <li>Reframe disruption into a strategic career reset</li>
-          <li>See what AI replaces vs what it can’t</li>
-          <li>Adopt a Free Agent mindset for the AI economy</li>
-        </ul>
+        <strong>Results over tasks</strong>
+        Learn to position your value around outcomes — not busywork.
       </div>
       <div class="card">
-        <h3>How to Use This Playbook</h3>
-        <div class="grid">
-          <div class="tile"><strong>1) Wake Up</strong><br/>Understand what’s changing and why your role feels unstable.</div>
-          <div class="tile"><strong>2) Rebalance</strong><br/>Upgrade EI, positioning, and how you work with AI.</div>
-          <div class="tile"><strong>3) Compete</strong><br/>Move from tasks to outcomes in the new workplace.</div>
-        </div>
+        <strong>Free Agent mindset</strong>
+        Shift from employee thinking to owning your market value.
+      </div>
+      <div class="card">
+        <strong>Coach the plays</strong>
+        You call strategy. AI runs execution.
+      </div>
+      <div class="card">
+        <strong>AI as leverage</strong>
+        Use AI as force-multiplier, not a crutch.
       </div>
     </div>
-  </section>
 
-  <section id="betteryou" class="section"><div class="card"><h2>BetterYou</h2><p class="kicker">Emotional resilience for professionals navigating disruption</p><p>Build resilience during uncertainty, regain confidence after disruption, and create momentum without burnout.</p></div></section>
-  <section id="betterconnections" class="section"><div class="card"><h2>BetterConnections</h2><p class="kicker">Connect with decision makers</p><ul class="bullets"><li>Recognize interviewer hot buttons</li><li>Make instant connections with key decision makers</li><li>Strengthen professional relationships</li></ul></div></section>
-  <section id="agentclarity" class="section"><div class="card"><h2>AgentClarity</h2><p class="kicker">From tasks to outcomes with AI</p><p>Design simple workflows and quality-check AI output.</p></div></section>
-  <section id="pricing" class="section"><div class="card"><h2>Pricing</h2><p class="kicker">$67 — one-time purchase</p><p><strong>AI raises the floor. EI raises the ceiling.</strong> Free AI gives answers. This upgrades how you compete.</p><p><a href="https://gumroad.com" target="_blank" style="color:var(--primary);font-weight:700">Buy on Gumroad →</a></p></div></section>
-  <section id="qa" class="section"><div class="card"><h2>Q&amp;A</h2><p><strong>Will this become outdated?</strong> No. It’s built around EI and execution as AI evolves.</p></div></section>
-</main>
+    <!-- BetterConnections -->
+    <h2>BetterConnections</h2>
+    <p>
+      Read the room. Adapt fast. Win interviews and influence decisions.
+    </p>
+    <ul>
+      <li>Scenario-based interview vignettes (no fluff)</li>
+      <li>Read cues from desk photos, plaques, and room style</li>
+      <li>Map signals to personality styles: Driver, Amiable, Analytical, Expressive</li>
+      <li>Identify hot buttons + opening lines for decision-makers</li>
+    </ul>
 
-<footer>
-  <div class="wrap">
-    <div>© 2026 Get Back in the Game</div>
-    <div>Disclaimer: Educational only. Not medical, psychological, legal, or financial advice.</div>
+    <!-- BetterYou -->
+    <h2>BetterYou</h2>
+    <p>
+      Regain focus, emotional control, and forward momentum.
+    </p>
+    <ul>
+      <li>Micro-plays for real-world pressure</li>
+      <li>Reset after energy crashes</li>
+      <li>Regulate emotional triggers in high-stakes moments</li>
+      <li>Reduce overwhelm without burnout</li>
+    </ul>
+
+    <!-- AgentClarity -->
+    <h2>AgentClarity</h2>
+    <p>
+      Move from prompting → clarity → agents.
+    </p>
+    <div class="callout">
+      <strong>Clarity turns messy prompts into agent-ready instructions.</strong>
+    </div>
+    <ul>
+      <li>Why better prompts aren’t enough</li>
+      <li>How clarity improves AI outcomes</li>
+      <li>Why agent thinking produces stronger results with AI</li>
+      <li>How to think in systems, not one-off requests</li>
+    </ul>
+
+    <!-- Q&A -->
+    <h2>Q&A</h2>
+
+    <h3>Why buy this instead of just using free AI?</h3>
+    <p>
+      Free AI gives answers. This system gives results. The Playbook gives you strategy. The apps give you reps and behavior change.
+    </p>
+
+    <h3>Why does results + AI matter now?</h3>
+    <p>
+      Companies no longer reward tasks. They reward outcomes — often delivered with AI. This system retrains how you create value.
+    </p>
+
+    <h3>Who is this for?</h3>
+    <p>
+      Professionals navigating layoffs, career transitions, interviews, or reinvention in an AI-shifting market.
+    </p>
+
+    <h3>How is this different from coaching or courses?</h3>
+    <p>
+      Coaching is expensive and time-boxed. Courses are passive. This is a practical system you can return to anytime.
+    </p>
+
+    <h3>Do I need to be good at AI?</h3>
+    <p>
+      No. The system teaches you how to think clearly first — then use AI effectively.
+    </p>
+
+    <h3>What’s the time commitment and expected results?</h3>
+    <p>
+      Short, focused sessions. Immediate clarity. Stronger interviews, sharper positioning, and better AI outcomes within days.
+    </p>
+
+    <div class="footer">
+      <p>© The Winning Edge Playbook System</p>
+    </div>
+
   </div>
-</footer>
-
-<script>
-  const links = document.querySelectorAll('.nav a');
-  const sections = document.querySelectorAll('.section');
-  links.forEach(link => {
-    link.addEventListener('click', e => {
-      e.preventDefault();
-      links.forEach(l => l.classList.remove('active'));
-      link.classList.add('active');
-      const target = link.getAttribute('data-target');
-      sections.forEach(sec => sec.classList.remove('active'));
-      document.getElementById(target).classList.add('active');
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-  });
-</script>
 </body>
 </html>
